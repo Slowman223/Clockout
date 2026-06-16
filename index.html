@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="Clock Out" />
+<meta name="theme-color" content="#1a6ef5" />
+<link rel="apple-touch-icon" href="data:image/png;base64,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" />
+
+<title>Clock Out Tracker</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f5f3;
+    --surface: #ffffff;
+    --border: #e2e2de;
+    --text: #1a1a18;
+    --muted: #6b6b67;
+    --accent: #1a6ef5;
+    --accent-bg: #eff4ff;
+    --accent-text: #1a4fa8;
+    --warn: #d97706;
+    --warn-bg: #fffbeb;
+    --warn-text: #92400e;
+    --success: #16a34a;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #131312;
+      --surface: #1e1e1c;
+      --border: #2e2e2b;
+      --text: #f0f0ee;
+      --muted: #8a8a85;
+      --accent: #4a8fff;
+      --accent-bg: #0f1f3d;
+      --accent-text: #93bbff;
+      --warn: #f59e0b;
+      --warn-bg: #1c1500;
+      --warn-text: #fcd34d;
+      --success: #4ade80;
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 0 0 4rem;
+  }
+
+  header { padding: 3rem 1.5rem 1rem; max-width: 480px; margin: 0 auto; }
+  header h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.5px; }
+  header p { font-size: 14px; color: var(--muted); margin-top: 4px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    max-width: 480px;
+    margin: 0 auto 1rem;
+    width: calc(100% - 2rem);
+  }
+
+  .field-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 1rem; }
+
+  label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  input[type="time"], select {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg);
+    color: var(--text);
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+  }
+  input[type="time"]:focus, select:focus { border-color: var(--accent); }
+
+  .btn {
+    width: 100%;
+    padding: 13px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    letter-spacing: -0.2px;
+  }
+  .btn:active { opacity: 0.85; transform: scale(0.99); }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-secondary {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    margin-top: 8px;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .btn-secondary:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+  .btn-danger {
+    background: none;
+    color: #e53935;
+    border: 1px solid #e5393540;
+    font-size: 13px;
+    padding: 8px;
+    margin-top: 0;
+  }
+
+  .error { font-size: 13px; color: #e53935; margin-top: 8px; display: none; }
+  .result-card { display: none; }
+
+  .hours-display { display: flex; align-items: baseline; gap: 6px; margin-bottom: 1.25rem; }
+  .hours-big { font-size: 42px; font-weight: 600; letter-spacing: -1px; line-height: 1; }
+  .hours-unit { font-size: 15px; color: var(--muted); }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 10px;
+  }
+
+  .blocks-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+
+  .block {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px 10px 8px;
+    background: var(--bg);
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .block:active { transform: scale(0.97); }
+
+  .block.highlight { border-color: var(--accent); background: var(--accent-bg); }
+  .block.warn { border-color: var(--warn); background: var(--warn-bg); }
+  .block.past { opacity: 0.4; }
+
+  .block.selected {
+    outline: 3px solid var(--accent);
+    outline-offset: 1px;
+  }
+  .block.selected::after {
+    content: '✓';
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .block.warn.selected { outline-color: var(--warn); }
+  .block.warn.selected::after { color: var(--warn); }
+
+  .block-time { font-size: 16px; font-weight: 600; color: var(--text); }
+  .block.highlight .block-time { color: var(--accent-text); }
+  .block.warn .block-time { color: var(--warn-text); }
+
+  .block-hrs { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .block.highlight .block-hrs { color: var(--accent-text); opacity: 0.8; }
+  .block.warn .block-hrs { color: var(--warn-text); opacity: 0.8; }
+
+  .block-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    margin-top: 5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--accent-bg);
+    color: var(--accent-text);
+  }
+  .block.warn .block-tag { background: var(--warn-bg); color: var(--warn-text); }
+
+  .select-hint { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+
+  .on-block-note { margin-top: 1rem; font-size: 13px; color: var(--success); display: none; }
+
+  /* Weekly log */
+  .week-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .week-total { font-size: 13px; color: var(--muted); }
+  .week-total span { font-weight: 600; color: var(--text); }
+  .log-empty { font-size: 14px; color: var(--muted); text-align: center; padding: 1rem 0; }
+
+  .log-entry {
+    display: grid;
+    grid-template-columns: 72px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .log-entry:last-child { border-bottom: none; }
+
+  .log-day { font-size: 13px; font-weight: 600; color: var(--text); }
+  .log-date { font-size: 11px; color: var(--muted); margin-top: 1px; }
+  .log-times { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .log-times strong { color: var(--text); font-weight: 500; }
+  .log-hrs { font-size: 17px; font-weight: 600; color: var(--accent-text); text-align: right; white-space: nowrap; }
+
+  .log-delete {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 0 0 8px;
+    line-height: 1;
+    width: auto;
+  }
+
+  .save-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--text);
+    color: var(--bg);
+    padding: 10px 20px;
+    border-radius: 99px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .save-toast.show { transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Clock out</h1>
+  <p>Enter your times to see your valid clock-out blocks.</p>
+</header>
+
+<div class="card">
+  <div class="field-row">
+    <div>
+      <label for="start-time">Start</label>
+      <input type="time" id="start-time" value="07:00" />
+    </div>
+    <div>
+      <label for="break-mins">Break</label>
+      <select id="break-mins">
+        <option value="0">None</option>
+        <option value="15">15 min</option>
+        <option value="30" selected>30 min</option>
+        <option value="45">45 min</option>
+        <option value="60">60 min</option>
+        <option value="90">90 min</option>
+      </select>
+    </div>
+    <div>
+      <label for="finish-time">Finish</label>
+      <input type="time" id="finish-time" value="15:06" />
+    </div>
+  </div>
+  <button class="btn btn-primary" onclick="calculate()">Calculate</button>
+  <p class="error" id="error-msg">Finish time must be after start time.</p>
+</div>
+
+<div class="card result-card" id="results">
+  <p class="section-label">Hours worked</p>
+  <div class="hours-display">
+    <span class="hours-big" id="hours-worked">—</span>
+    <span class="hours-unit">hrs</span>
+  </div>
+
+  <hr class="divider" />
+
+  <p class="section-label">Clock-out blocks</p>
+  <p class="select-hint">Tap a block to select your actual clock-out time</p>
+  <div class="blocks-grid" id="blocks-grid"></div>
+  <p class="on-block-note" id="on-block-note">✓ You're exactly on a valid block — clock out now.</p>
+
+  <hr class="divider" />
+  <button class="btn btn-secondary" id="save-btn" onclick="saveToLog()" disabled>＋ Save to weekly log</button>
+</div>
+
+<!-- Weekly log -->
+<div class="card" id="log-card">
+  <div class="week-header">
+    <p class="section-label" style="margin:0;">This week</p>
+    <p class="week-total">Total: <span id="week-total">0.00</span> hrs</p>
+  </div>
+  <div id="log-list"><p class="log-empty">No entries yet.</p></div>
+  <div id="clear-btn" style="display:none;">
+    <button class="btn btn-danger" id="clear-trigger" onclick="showClearConfirm()">Clear week</button>
+    <div id="clear-confirm" style="display:none; margin-top:8px; background:var(--bg); border:1px solid #e5393540; border-radius:var(--radius-sm); padding:10px 12px;">
+      <p style="font-size:13px; color:var(--text); margin-bottom:10px;">Clear all entries for this week?</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+        <button class="btn" style="padding:8px; font-size:13px; background:none; border:1px solid var(--border); color:var(--text);" onclick="hideClearConfirm()">Cancel</button>
+        <button class="btn" style="padding:8px; font-size:13px; background:#e53935; color:#fff; border:none;" onclick="confirmClear()">Yes, clear</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="save-toast" id="toast">Saved to weekly log</div>
+
+<script>
+var currentCalc = null;
+var selectedBlock = null; // { hours, clockOutMins }
+
+function timeToMins(t) {
+  const [h, m] = t.split(':').map(Number);
+  return h * 60 + m;
+}
+function minsToTime(totalMins) {
+  const h = Math.floor(totalMins / 60) % 24;
+  const m = Math.round(totalMins % 60);
+  const ampm = h >= 12 ? 'pm' : 'am';
+  const h12 = h % 12 === 0 ? 12 : h % 12;
+  return h12 + ':' + String(m).padStart(2, '0') + ' ' + ampm;
+}
+function minsToTimeStr(totalMins) {
+  const h = Math.floor(totalMins / 60) % 24;
+  const m = Math.round(totalMins % 60);
+  return String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0');
+}
+function blockIndex(hours) { return Math.floor((hours - 0.35) / 0.25); }
+function blockHours(n) { return Math.round((0.35 + n * 0.25) * 100) / 100; }
+
+function selectBlock(el, bh, clockMins) {
+  // Deselect all
+  document.querySelectorAll('.block').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedBlock = { hours: bh.toFixed(2), clockOutMins: clockMins };
+  document.getElementById('save-btn').disabled = false;
+}
+
+function calculate() {
+  const startVal = document.getElementById('start-time').value;
+  const finishVal = document.getElementById('finish-time').value;
+  const breakMins = parseInt(document.getElementById('break-mins').value);
+  const errEl = document.getElementById('error-msg');
+
+  if (!startVal || !finishVal) return;
+
+  const startMins = timeToMins(startVal);
+  const finishMins = timeToMins(finishVal);
+
+  if (finishMins <= startMins) {
+    errEl.style.display = 'block';
+    document.getElementById('results').style.display = 'none';
+    return;
+  }
+  errEl.style.display = 'none';
+
+  selectedBlock = null;
+  document.getElementById('save-btn').disabled = true;
+
+  const workedMins = finishMins - startMins - breakMins;
+  const hoursWorked = workedMins / 60;
+  document.getElementById('hours-worked').textContent = hoursWorked.toFixed(2);
+
+  const n = blockIndex(hoursWorked);
+  const prevBlock = blockHours(n - 1);
+  const currBlock = blockHours(n);
+  const nextBlock = blockHours(n + 1);
+  const onBlock   = Math.abs(hoursWorked - currBlock) < 0.001;
+
+  const workBase = startMins + breakMins;
+  const blocks = [
+    { bh: prevBlock, cls: 'past',                    tag: '' },
+    { bh: currBlock, cls: onBlock ? 'highlight' : '', tag: onBlock ? 'clock out now' : 'last block' },
+    { bh: nextBlock, cls: onBlock ? '' : 'warn',      tag: onBlock ? 'next block' : 'stay back' },
+  ];
+
+  const grid = document.getElementById('blocks-grid');
+  grid.innerHTML = '';
+  blocks.forEach(({ bh, cls, tag }) => {
+    const clockMins = workBase + bh * 60;
+    const div = document.createElement('div');
+    div.className = 'block' + (cls ? ' ' + cls : '');
+    div.innerHTML = `<div class="block-time">${minsToTime(clockMins)}</div>
+      <div class="block-hrs">${bh.toFixed(2)} hrs</div>
+      ${tag ? `<div class="block-tag">${tag}</div>` : ''}`;
+    div.addEventListener('click', function() { selectBlock(div, bh, clockMins); });
+    grid.appendChild(div);
+  });
+
+  document.getElementById('on-block-note').style.display = onBlock ? 'block' : 'none';
+  document.getElementById('results').style.display = 'block';
+
+  currentCalc = { startVal, finishVal, breakMins, hoursWorked: hoursWorked.toFixed(2) };
+}
+
+function saveToLog() {
+  if (!currentCalc || !selectedBlock) return;
+  const log = getLog();
+  const now = new Date();
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const entry = {
+    id: Date.now(),
+    day: days[now.getDay()],
+    date: now.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' }),
+    start: currentCalc.startVal,
+    finish: minsToTimeStr(currentCalc.startVal ? (function(){ 
+      const [h,m] = currentCalc.startVal.split(':').map(Number);
+      return h*60+m+currentCalc.breakMins+Math.round(parseFloat(selectedBlock.hours)*60);
+    })() : 0),
+    clockOut: minsToTime(selectedBlock.clockMins),
+    breakMins: currentCalc.breakMins,
+    hours: selectedBlock.hours
+  };
+  // Store finish as the selected block clock time string
+  entry.finish = minsToTimeStr(selectedBlock.clockOutMins);
+  log.push(entry);
+  saveLog(log);
+  renderLog();
+  showToast();
+}
+
+function getLog() {
+  try { return JSON.parse(localStorage.getItem('clockout-log') || '[]'); }
+  catch(e) { return []; }
+}
+function saveLog(log) { localStorage.setItem('clockout-log', JSON.stringify(log)); }
+
+function deleteEntry(id) {
+  saveLog(getLog().filter(e => e.id !== id));
+  renderLog();
+}
+
+function showClearConfirm() {
+  document.getElementById('clear-confirm').style.display = 'block';
+  document.getElementById('clear-trigger').style.display = 'none';
+}
+function hideClearConfirm() {
+  document.getElementById('clear-confirm').style.display = 'none';
+  document.getElementById('clear-trigger').style.display = 'block';
+}
+function confirmClear() {
+  saveLog([]);
+  renderLog();
+}
+
+function fmt(timeStr) {
+  const [h, m] = timeStr.split(':').map(Number);
+  const ampm = h >= 12 ? 'pm' : 'am';
+  const h12 = h % 12 === 0 ? 12 : h % 12;
+  return h12 + ':' + String(m).padStart(2, '0') + ' ' + ampm;
+}
+
+function renderLog() {
+  const log = getLog();
+  const list = document.getElementById('log-list');
+  const clearBtn = document.getElementById('clear-btn');
+
+  if (log.length === 0) {
+    list.innerHTML = '<p class="log-empty">No entries yet.</p>';
+    clearBtn.style.display = 'none';
+    document.getElementById('week-total').textContent = '0.00';
+    return;
+  }
+  hideClearConfirm();
+
+  const total = log.reduce((sum, e) => sum + parseFloat(e.hours), 0);
+  document.getElementById('week-total').textContent = total.toFixed(2);
+  clearBtn.style.display = 'block';
+
+  list.innerHTML = log.map(e => `
+    <div class="log-entry">
+      <div>
+        <div class="log-day">${e.day}</div>
+        <div class="log-date">${e.date}</div>
+      </div>
+      <div class="log-times">
+        <strong>${fmt(e.start)}</strong> → <strong>${fmt(e.finish)}</strong><br>
+        Break: ${e.breakMins === 0 ? 'none' : e.breakMins + ' min'}
+      </div>
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div class="log-hrs">${e.hours}</div>
+        <button class="log-delete" onclick="deleteEntry(${e.id})" title="Remove">×</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+calculate();
+renderLog();
+</script>
+</body>
+</html>
